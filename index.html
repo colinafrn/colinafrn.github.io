@@ -1,130 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hehehe</title>
+    <title>bosssss</title>
     <style>
         body {
-            margin: 0;
-            padding: 20px;
-            font-family: 'Georgia', serif;
-            background: linear-gradient(to right, #313130 0%, #363535 100%);
-            color: #fbfbfb;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Ensure no overflow from the stars */
+            background: linear-gradient(to right, #232323, #050505);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden; 
         }
 
-        .container {
-            text-align: center;
-            position: relative;
+        .flower {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
         }
 
-        .letter-content {
-            display: none;
-            background-color: rgba(52, 51, 51, 0.8);
-            border: 2px solid #d2d2d2;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 10px 10px rgba(181, 179, 179, 0.2);
-            margin-top: 20px;
-            position: relative;
-            z-index: 1; /* Ensure the letter stays above the stars */
-        }
-
-        #toggleButton {
-            background-color: #ff6f61;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #toggleButton:hover {
-            background-color: #ff4b3e;
+        .message {
+            font-size: 24px;
+            color: #a9a8a8;
         }
 
         .shooting-star {
-            width: 0.1%;
-            height: 50%;
-            background: linear-gradient(rgb(201, 224, 255), rgba(149, 149, 149, 0));
+            width: 2px;
+            height: 80px;
+            background: linear-gradient(rgb(253, 253, 253), rgba(255, 255, 255, 0));
             position: absolute;
-            
+            top: -80px;
             animation: shoot 2s linear infinite;
-             overflow: hidden;
-             z-index: 10%; 
-             top: -100%;
-            left: -10000%;
-}
-        
+        }
 
         @keyframes shoot {
             0% {
-              
-                transform: translate(0, 0) rotate(120deg);
+                transform: translate(600px, 0) rotate(130deg);
                 opacity: 1;
             }
             100% {
-             
-                transform: translate(600px, 600px) rotate(120deg);
-                opacity: 1;
+                transform: translate(600px, 600px) rotate(130deg);
+                opacity: 0;
             }
+        }
+
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: -30%;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>HAPPY 12TH</h1>
-        <button id="toggleButton">Smile before opening :></button>
-        <div id="letterContent" class="letter-content">
-            <p>hola bebe</p>
-            <p>henlow, i dunno what to say and pano ako magapuon kang sasabihon ko whshs but hey HAPPYYYY 12TH MONTHSARRY diit nalang mag anniv na kita no?</p>
-            <p>tho we always fight about something i want you to know that your smile brightens my days, and your kindness warms my heart. I cherish every moment we spend together everyday , and I hope you feel the way I do</p>
-            <p>thanks for being there for me especially sa days na bako ako okay whshs thanks din for being understandable. i always love youuu, i know bako ini kagayunan na letter or design whshshs i tried my best. i hopeee you likee ittttt.</p>
-            <p>I knew you were special from the first moment we met. Your warmth, joy, and wonderful soul have captured me in ways I never imagined possible. You have shown me what true love is, and I am eternally grateful for having u .With all my love,<br>-francis</p>
-        </div>
-        <div id="starsContainer"></div>
+    <div class="stars-container">
+        <div class="shooting-star" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="shooting-star" style="left: 30%; animation-delay: 0.5s;"></div>
+        <div class="shooting-star" style="left: 50%; animation-delay: 1s;"></div>
+        <div class="shooting-star" style="left: 70%; animation-delay: 1.5s;"></div>
+        <div class="shooting-star" style="left: 90%; animation-delay: 2s;"></div>
+        <div class="shooting-star" style="left: 90%; animation-delay: 2s;"></div>
     </div>
-
-    <script>
-        document.getElementById("toggleButton").addEventListener("click", function() {
-            const letterContent = document.getElementById("letterContent");
-            if (letterContent.style.display === "none" || letterContent.style.display === "") {
-                letterContent.style.display = "block";
-                this.textContent = "Close Letter";
-                createShootingStars();
-            } else {
-                letterContent.style.display = "none";
-                this.textContent = "Open Letter";
-                removeShootingStars();
-            }
-        });
-
-        function createShootingStars() {
-            const starsContainer = document.getElementById("starsContainer");
-            for (let i = 0; i < 30; i++) {
-                const star = document.createElement('div');
-                star.classList.add('shooting-star');
-                star.style.left = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 2 + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-
-        function removeShootingStars() {
-            const starsContainer = document.getElementById("starsContainer");
-            while (starsContainer.firstChild) {
-                starsContainer.removeChild(starsContainer.firstChild);
-            }
-        }
-    </script>
+    <img class="flower" src="d45e47ee0ea7e9e285de7d10f34d2f6e.gif" alt="Flower GIF">
+    <div class="message">Happy Birthday Bosss mabuhay ka hanggang gusto mo</div>
 </body>
 </html>
 
